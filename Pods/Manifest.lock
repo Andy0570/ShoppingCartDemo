@@ -3,6 +3,12 @@ PODS:
   - ChameleonFramework (2.1.0):
     - ChameleonFramework/Default (= 2.1.0)
   - ChameleonFramework/Default (2.1.0)
+  - CYLTabBarController (1.29.0):
+    - CYLTabBarController/Core (= 1.29.0)
+  - CYLTabBarController/Core (1.29.0)
+  - CYLTabBarController/Lottie (1.29.0):
+    - CYLTabBarController/Core
+    - lottie-ios (~> 2.5.3)
   - DZNEmptyDataSet (1.8.1)
   - JKCategories (1.9):
     - JKCategories/CoreData (= 1.9)
@@ -142,6 +148,7 @@ PODS:
   - JKCategories/UIKit/UIView (1.9)
   - JKCategories/UIKit/UIViewController (1.9)
   - JKCategories/UIKit/UIWindow (1.9)
+  - lottie-ios (2.5.3)
   - Mantle (2.1.1):
     - Mantle/extobjc (= 2.1.1)
   - Mantle/extobjc (2.1.1)
@@ -160,6 +167,8 @@ PODS:
 DEPENDENCIES:
   - BEMCheckBox
   - ChameleonFramework
+  - CYLTabBarController
+  - CYLTabBarController/Lottie
   - DZNEmptyDataSet
   - JKCategories
   - Mantle
@@ -175,8 +184,10 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - BEMCheckBox
     - ChameleonFramework
+    - CYLTabBarController
     - DZNEmptyDataSet
     - JKCategories
+    - lottie-ios
     - Mantle
     - Masonry
     - MBProgressHUD
@@ -189,8 +200,10 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  CYLTabBarController: f5460b8446f82d016945d4d53895a1ef185b79e3
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   JKCategories: b5240c9f6cd6991cacced4bec47c3f508c7f3f7e
+  lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   Mantle: 35238ae6f2e2b2d474fa7b67fee82a59fea71915
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
@@ -200,6 +213,6 @@ SPEC CHECKSUMS:
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 9c1c7945a8bb3d402b6c922d25b9061cfdd1b8bb
+PODFILE CHECKSUM: 6e39171709e548d468714e97d6f733377df94b13
 
 COCOAPODS: 1.9.3

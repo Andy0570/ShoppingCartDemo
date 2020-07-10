@@ -25,4 +25,8 @@ target 'ShoppingCartDemo' do
   pod 'JKCategories'
   pod 'ChameleonFramework'
   
+  # TabBar
+  pod 'CYLTabBarController'          # 默认不依赖Lottie
+  pod 'CYLTabBarController/Lottie'   # 依赖Lottie库
+  
 end

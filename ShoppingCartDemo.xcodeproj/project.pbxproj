@@ -3,17 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2251095224AB4BA300057BBC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2251095124AB4BA300057BBC /* AppDelegate.m */; };
-		2251095524AB4BA300057BBC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2251095424AB4BA300057BBC /* SceneDelegate.m */; };
-		2251095824AB4BA300057BBC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2251095724AB4BA300057BBC /* ViewController.m */; };
-		2251095B24AB4BA300057BBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2251095924AB4BA300057BBC /* Main.storyboard */; };
 		2251095D24AB4BA400057BBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2251095C24AB4BA400057BBC /* Assets.xcassets */; };
 		2251096024AB4BA400057BBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2251095E24AB4BA400057BBC /* LaunchScreen.storyboard */; };
 		2251096324AB4BA400057BBC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2251096224AB4BA400057BBC /* main.m */; };
+		22AA78E724AB54FF0093C2EF /* tab_search_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 22AA78E324AB54FE0093C2EF /* tab_search_animate.json */; };
+		22AA78E824AB54FF0093C2EF /* tab_home_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 22AA78E424AB54FF0093C2EF /* tab_home_animate.json */; };
+		22AA78E924AB54FF0093C2EF /* tab_me_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 22AA78E524AB54FF0093C2EF /* tab_me_animate.json */; };
+		22AA78EA24AB54FF0093C2EF /* tab_message_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 22AA78E624AB54FF0093C2EF /* tab_message_animate.json */; };
+		22AA78F124AB96180093C2EF /* HQLMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AA78F024AB96180093C2EF /* HQLMainViewController.m */; };
+		22AA78F424AB96230093C2EF /* HQLSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AA78F324AB96230093C2EF /* HQLSearchViewController.m */; };
+		22AA78F724AB962D0093C2EF /* HQLMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AA78F624AB962D0093C2EF /* HQLMessageViewController.m */; };
+		22AA78FA24AB963B0093C2EF /* HQLMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AA78F924AB963B0093C2EF /* HQLMineViewController.m */; };
+		22AA790024ABA8080093C2EF /* AppDelegate+CYLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AA78FF24ABA8080093C2EF /* AppDelegate+CYLTabBar.m */; };
 		74AC0E5959196440568CFFC8 /* libPods-ShoppingCartDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5B78E3CCE6B298FC1C21AB /* libPods-ShoppingCartDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -21,15 +27,24 @@
 		2251094D24AB4BA300057BBC /* ShoppingCartDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingCartDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2251095024AB4BA300057BBC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2251095124AB4BA300057BBC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2251095324AB4BA300057BBC /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		2251095424AB4BA300057BBC /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		2251095624AB4BA300057BBC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2251095724AB4BA300057BBC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		2251095A24AB4BA300057BBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2251095C24AB4BA400057BBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2251095F24AB4BA400057BBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2251096124AB4BA400057BBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2251096224AB4BA400057BBC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		22AA78E324AB54FE0093C2EF /* tab_search_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_search_animate.json; sourceTree = "<group>"; };
+		22AA78E424AB54FF0093C2EF /* tab_home_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_home_animate.json; sourceTree = "<group>"; };
+		22AA78E524AB54FF0093C2EF /* tab_me_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_me_animate.json; sourceTree = "<group>"; };
+		22AA78E624AB54FF0093C2EF /* tab_message_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_message_animate.json; sourceTree = "<group>"; };
+		22AA78EF24AB96180093C2EF /* HQLMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HQLMainViewController.h; sourceTree = "<group>"; };
+		22AA78F024AB96180093C2EF /* HQLMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HQLMainViewController.m; sourceTree = "<group>"; };
+		22AA78F224AB96230093C2EF /* HQLSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HQLSearchViewController.h; sourceTree = "<group>"; };
+		22AA78F324AB96230093C2EF /* HQLSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HQLSearchViewController.m; sourceTree = "<group>"; };
+		22AA78F524AB962D0093C2EF /* HQLMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HQLMessageViewController.h; sourceTree = "<group>"; };
+		22AA78F624AB962D0093C2EF /* HQLMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HQLMessageViewController.m; sourceTree = "<group>"; };
+		22AA78F824AB963B0093C2EF /* HQLMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HQLMineViewController.h; sourceTree = "<group>"; };
+		22AA78F924AB963B0093C2EF /* HQLMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HQLMineViewController.m; sourceTree = "<group>"; };
+		22AA78FE24ABA8080093C2EF /* AppDelegate+CYLTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+CYLTabBar.h"; sourceTree = "<group>"; };
+		22AA78FF24ABA8080093C2EF /* AppDelegate+CYLTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+CYLTabBar.m"; sourceTree = "<group>"; };
 		300948BA570DDA5D679D6269 /* Pods-ShoppingCartDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCartDemo.release.xcconfig"; path = "Target Support Files/Pods-ShoppingCartDemo/Pods-ShoppingCartDemo.release.xcconfig"; sourceTree = "<group>"; };
 		7E5B78E3CCE6B298FC1C21AB /* libPods-ShoppingCartDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShoppingCartDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F410CA26FC2A4B11077CE158 /* Pods-ShoppingCartDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCartDemo.debug.xcconfig"; path = "Target Support Files/Pods-ShoppingCartDemo/Pods-ShoppingCartDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -47,6 +62,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		220746CF24AC21A500862BAD /* ShoppingCart(购物车) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "ShoppingCart(购物车)";
+			sourceTree = "<group>";
+		};
 		2251094424AB4BA300057BBC = {
 			isa = PBXGroup;
 			children = (
@@ -68,19 +90,85 @@
 		2251094F24AB4BA300057BBC /* ShoppingCartDemo */ = {
 			isa = PBXGroup;
 			children = (
-				2251095024AB4BA300057BBC /* AppDelegate.h */,
-				2251095124AB4BA300057BBC /* AppDelegate.m */,
-				2251095324AB4BA300057BBC /* SceneDelegate.h */,
-				2251095424AB4BA300057BBC /* SceneDelegate.m */,
-				2251095624AB4BA300057BBC /* ViewController.h */,
-				2251095724AB4BA300057BBC /* ViewController.m */,
-				2251095924AB4BA300057BBC /* Main.storyboard */,
+				22AA78DC24AB525B0093C2EF /* Home(首页) */,
+				22AA78DD24AB52690093C2EF /* Search(搜索) */,
+				22AA78DE24AB52720093C2EF /* Message(消息) */,
+				22AA78DF24AB527B0093C2EF /* Me(我的) */,
+				220746CF24AC21A500862BAD /* ShoppingCart(购物车) */,
+				22AA78E124AB52AF0093C2EF /* AppDelegate */,
+				22AA78E224AB54EB0093C2EF /* LottieJSONFile */,
+				22AA78E024AB52AA0093C2EF /* Supporting Files */,
+			);
+			path = ShoppingCartDemo;
+			sourceTree = "<group>";
+		};
+		22AA78DC24AB525B0093C2EF /* Home(首页) */ = {
+			isa = PBXGroup;
+			children = (
+				22AA78EF24AB96180093C2EF /* HQLMainViewController.h */,
+				22AA78F024AB96180093C2EF /* HQLMainViewController.m */,
+			);
+			name = "Home(首页)";
+			sourceTree = "<group>";
+		};
+		22AA78DD24AB52690093C2EF /* Search(搜索) */ = {
+			isa = PBXGroup;
+			children = (
+				22AA78F224AB96230093C2EF /* HQLSearchViewController.h */,
+				22AA78F324AB96230093C2EF /* HQLSearchViewController.m */,
+			);
+			name = "Search(搜索)";
+			sourceTree = "<group>";
+		};
+		22AA78DE24AB52720093C2EF /* Message(消息) */ = {
+			isa = PBXGroup;
+			children = (
+				22AA78F524AB962D0093C2EF /* HQLMessageViewController.h */,
+				22AA78F624AB962D0093C2EF /* HQLMessageViewController.m */,
+			);
+			name = "Message(消息)";
+			sourceTree = "<group>";
+		};
+		22AA78DF24AB527B0093C2EF /* Me(我的) */ = {
+			isa = PBXGroup;
+			children = (
+				22AA78F824AB963B0093C2EF /* HQLMineViewController.h */,
+				22AA78F924AB963B0093C2EF /* HQLMineViewController.m */,
+			);
+			name = "Me(我的)";
+			sourceTree = "<group>";
+		};
+		22AA78E024AB52AA0093C2EF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				2251095C24AB4BA400057BBC /* Assets.xcassets */,
 				2251095E24AB4BA400057BBC /* LaunchScreen.storyboard */,
 				2251096124AB4BA400057BBC /* Info.plist */,
 				2251096224AB4BA400057BBC /* main.m */,
 			);
-			path = ShoppingCartDemo;
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22AA78E124AB52AF0093C2EF /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				2251095024AB4BA300057BBC /* AppDelegate.h */,
+				2251095124AB4BA300057BBC /* AppDelegate.m */,
+				22AA78FE24ABA8080093C2EF /* AppDelegate+CYLTabBar.h */,
+				22AA78FF24ABA8080093C2EF /* AppDelegate+CYLTabBar.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		22AA78E224AB54EB0093C2EF /* LottieJSONFile */ = {
+			isa = PBXGroup;
+			children = (
+				22AA78E424AB54FF0093C2EF /* tab_home_animate.json */,
+				22AA78E524AB54FF0093C2EF /* tab_me_animate.json */,
+				22AA78E624AB54FF0093C2EF /* tab_message_animate.json */,
+				22AA78E324AB54FE0093C2EF /* tab_search_animate.json */,
+			);
+			name = LottieJSONFile;
 			sourceTree = "<group>";
 		};
 		44B6FD518860EAF0A9FA67F5 /* Frameworks */ = {
@@ -97,7 +185,6 @@
 				F410CA26FC2A4B11077CE158 /* Pods-ShoppingCartDemo.debug.xcconfig */,
 				300948BA570DDA5D679D6269 /* Pods-ShoppingCartDemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -161,8 +248,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2251096024AB4BA400057BBC /* LaunchScreen.storyboard in Resources */,
+				22AA78E824AB54FF0093C2EF /* tab_home_animate.json in Resources */,
+				22AA78E724AB54FF0093C2EF /* tab_search_animate.json in Resources */,
+				22AA78E924AB54FF0093C2EF /* tab_me_animate.json in Resources */,
 				2251095D24AB4BA400057BBC /* Assets.xcassets in Resources */,
-				2251095B24AB4BA300057BBC /* Main.storyboard in Resources */,
+				22AA78EA24AB54FF0093C2EF /* tab_message_animate.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,24 +305,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2251095824AB4BA300057BBC /* ViewController.m in Sources */,
+				22AA78F424AB96230093C2EF /* HQLSearchViewController.m in Sources */,
+				22AA78F124AB96180093C2EF /* HQLMainViewController.m in Sources */,
 				2251095224AB4BA300057BBC /* AppDelegate.m in Sources */,
 				2251096324AB4BA400057BBC /* main.m in Sources */,
-				2251095524AB4BA300057BBC /* SceneDelegate.m in Sources */,
+				22AA78F724AB962D0093C2EF /* HQLMessageViewController.m in Sources */,
+				22AA790024ABA8080093C2EF /* AppDelegate+CYLTabBar.m in Sources */,
+				22AA78FA24AB963B0093C2EF /* HQLMineViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2251095924AB4BA300057BBC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2251095A24AB4BA300057BBC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2251095E24AB4BA400057BBC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -361,14 +446,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A8F7U6DN75;
-				INFOPLIST_FILE = ShoppingCartDemo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ShoppingCartDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Haidian.ShoppingCartDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -379,14 +464,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A8F7U6DN75;
-				INFOPLIST_FILE = ShoppingCartDemo/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ShoppingCartDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Haidian.ShoppingCartDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -69,6 +69,7 @@ Hearder 图片推荐尺寸：1280*640
 * [YYKit](https://github.com/ibireme/YYKit) - iOS 工具类组件
 * [JKCategories](https://github.com/shaojiankui/JKCategories) - iOS 的 Category 范畴类集合。
 * [Chameleon](https://github.com/viccalexander/Chameleon) - 颜色框架
+* [CYLTabBarController](https://github.com/ChenYilong/CYLTabBarController)  - 一行代码实现 Lottie 动画 TabBar，支持中间带 + 号的 TabBar 样式，自带红点角标，支持动态刷新。
 
 
 
@@ -81,7 +82,7 @@ Hearder 图片推荐尺寸：1280*640
 
 ## 如何贡献
 
-欢迎任何贡献，有关如何参与到本项目的信息，请参见 [CONTRIBUTING](https://github.com/texturegroup/texture/blob/master/CONTRIBUTING.md)。
+欢迎任何贡献，有关如何参与到本项目的信息，请参见 [CONTRIBUTING](https://github.com/Andy0570/ShoppingCartDemo/blob/master/CONTRIBUTING.md)。
 
 
 ## 使用许可
