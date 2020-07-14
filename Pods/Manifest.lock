@@ -154,6 +154,7 @@ PODS:
   - Mantle/extobjc (2.1.1)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
+  - MGSwipeTableCell (1.6.11)
   - MJRefresh (3.4.3)
   - PPNumberButton (0.8.0)
   - SDWebImage (5.8.1):
@@ -174,6 +175,7 @@ DEPENDENCIES:
   - Mantle
   - Masonry
   - MBProgressHUD
+  - MGSwipeTableCell
   - MJRefresh
   - PPNumberButton
   - SDWebImage
@@ -191,6 +193,7 @@ SPEC REPOS:
     - Mantle
     - Masonry
     - MBProgressHUD
+    - MGSwipeTableCell
     - MJRefresh
     - PPNumberButton
     - SDWebImage
@@ -207,12 +210,13 @@ SPEC CHECKSUMS:
   Mantle: 35238ae6f2e2b2d474fa7b67fee82a59fea71915
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MGSwipeTableCell: b804e4e450dee439c42250be90bd50458bf67fce
   MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
   PPNumberButton: 4442ff64c21d91733057ca1b3dc05fb4df55f2c0
   SDWebImage: e3eae2eda88578db0685a0c88597fdadd9433f05
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 6e39171709e548d468714e97d6f733377df94b13
+PODFILE CHECKSUM: b43a0c57d157fcb14adcb1c5d52189d57598e7b7
 
 COCOAPODS: 1.9.3

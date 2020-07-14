@@ -24,6 +24,7 @@ target 'ShoppingCartDemo' do
   pod 'YYKit'
   pod 'JKCategories'
   pod 'ChameleonFramework'
+  pod 'MGSwipeTableCell'
   
   # TabBar
   pod 'CYLTabBarController'          # 默认不依赖Lottie

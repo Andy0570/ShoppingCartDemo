@@ -12,7 +12,7 @@
 #import <CYLTabBarController.h>
 
 // Controller
-#import "HQLMainViewController.h"
+#import "HQLMainTableViewController.h"
 #import "HQLSearchViewController.h"
 #import "HQLMessageViewController.h"
 #import "HQLMineViewController.h"
@@ -41,7 +41,7 @@
 // MARK: 视图控制器数组
 - (NSArray *)viewControllers {
     // 首页
-    HQLMainViewController *mainVC = [[HQLMainViewController alloc] init];
+    HQLMainTableViewController *mainVC = [[HQLMainTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
     mainVC.navigationItem.title = @"首页";
     CYLBaseNavigationController *mainNC = [[CYLBaseNavigationController alloc] initWithRootViewController:mainVC];
     
