@@ -148,9 +148,16 @@ static HQLShoppingCartManager *_sharedManager = nil;
 - (void)updateGoodsSettleData {
     
     // 1.重置所有结算数据
-    self.settleGoodsAmount = 0;  // 结算商品数量
-    self.settleTotalPrice = 0.f; // 结算商品合计价格
-    self.selectedState = YES;     // 是否全选
+    self.settleGoodsAmount = 0;    // 结算商品数量
+    self.settleTotalPrice = 0.f;   // 结算商品合计价格
+    self.selectedState = YES;      // 是否全选
+    self.settleButtonEnabled = NO; // 是否开启结算按钮
+    
+    // 如果没有商品数据，返回
+    if (self.mutableStores.count ==0) {
+        self.selectedState = NO;
+        return;
+    }
     
     // 2.遍历数据源
     [self.mutableStores enumerateObjectsUsingBlock:^(HQLStore *currentStore, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -160,6 +167,10 @@ static HQLShoppingCartManager *_sharedManager = nil;
                 int quantity = currentGoods.quantity.intValue;
                 self.settleGoodsAmount += quantity;
                 self.settleTotalPrice += currentGoodsPrice * quantity;
+                
+                // 只要有一件商品是选中的，就允许结算，
+                // TODO: 根据业务需求，如果选中的商品没有库存，也不允许结算
+                self.settleButtonEnabled = YES;
             } else {
                 self.selectedState = NO;
             }

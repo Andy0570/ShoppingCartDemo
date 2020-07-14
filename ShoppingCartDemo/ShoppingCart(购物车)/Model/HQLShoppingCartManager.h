@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, assign) NSInteger settleGoodsAmount;    // 结算商品数量
 @property (nonatomic, readonly, assign) float settleTotalPrice;         // 结算商品合计价格
 @property (nonatomic, assign, getter=isAllSelected) BOOL selectedState; // 是否全选
+@property (nonatomic, assign, getter=isSettleButtonEnabled) BOOL settleButtonEnabled; // 是否禁用结算按钮
 
 + (instancetype)sharedManager;
 

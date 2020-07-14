@@ -150,7 +150,7 @@
     [self.shoppingCartSettleView updateWithTotalPrice:_manager.settleTotalPrice
                                                amount:_manager.settleGoodsAmount
                                allSelectedButtonState:_manager.isAllSelected
-                                  settleButtonEnabled:YES];
+                                  settleButtonEnabled:_manager.isSettleButtonEnabled];
 }
 
 - (HQLShoppingCartProxy *)shoppingCartProxy {
