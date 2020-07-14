@@ -134,6 +134,14 @@
 
 #pragma mark - <MGSwipeTableCellDelegate>
 
+/**
+ 说明：
+ 
+ 你也可以在创建 MGSwipeButton 对象时，通过内联 Block 方式接收按钮点击事件，而不是通过这里的可选 Delegate 方式。
+ 但是因为 MGSwipeButton 按钮是按需创建的，通过 Delegate 的方式接收按钮点击事件可以提升内存使用效率（节省内存）。
+ 
+ 以上在 MGSwipeTableCell 框架的 README 文档中有提及。
+ */
 - (BOOL)swipeTableCell:(MGSwipeTableCell *)cell tappedButtonAtIndex:(NSInteger)index direction:(MGSwipeDirection)direction fromExpansion:(BOOL)fromExpansion {
     
     NSLog(@"cell = %@",cell);

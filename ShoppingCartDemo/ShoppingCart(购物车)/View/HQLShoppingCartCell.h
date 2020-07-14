@@ -22,7 +22,6 @@ typedef void(^ShoppingCartCellSelectButtonActionBlock)(BOOL isSelected);
 typedef void(^ShoppingCartGoodsQuantityChangedBlock)(NSInteger quantity);
 
 /// 购物袋商品 cell
-// TODO: 修改商品数量功能
 @interface HQLShoppingCartCell : MGSwipeTableCell
 
 @property (nonatomic, strong) HQLGoods *goods;
