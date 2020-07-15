@@ -40,7 +40,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)deleteGoodsAtIndexPath:(NSIndexPath *)indexPath;
 
 // 修改商品购买数量
-- (void)goodsQuantityChanged:(NSInteger)quantity atIndexPath:(NSIndexPath *)indexPath;
+- (void)updateGoodsQuantity:(NSInteger)quantity atIndexPath:(NSIndexPath *)indexPath;
+
+// 根据 section 返回 Store
+- (HQLStore *)storeInSection:(NSInteger)section;
+
+// 根据 indexPath 返回 Goods
+- (HQLGoods *)goodsAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 

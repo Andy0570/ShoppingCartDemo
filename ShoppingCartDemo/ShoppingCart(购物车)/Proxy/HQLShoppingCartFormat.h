@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-@class HQLShoppingCartFormat;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,10 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 @optional
 
 // 获取购物车数据成功回调
-- (void)ShoppingCartFormatDidReceiveResponse:(NSArray *)dataSourceArray;
+- (void)shoppingCartFormatDidReceiveResponse:(NSArray *)dataSourceArray;
 
 // 获取购物车数据失败回调
-- (void)ShoppingCartFormatDidFailWithError:(NSError *)error;
+- (void)shoppingCartFormatDidFailWithError:(NSError *)error;
 
 @end
 

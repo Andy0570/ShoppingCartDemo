@@ -30,8 +30,8 @@ typedef struct {
     _delegate = delegate;
     
     // 提前缓存方法的响应能力
-    _delegateFlag.didReceiveResponse = [delegate respondsToSelector:@selector(ShoppingCartFormatDidReceiveResponse:)];
-    _delegateFlag.didFailWithError = [delegate respondsToSelector:@selector(ShoppingCartFormatDidFailWithError:)];
+    _delegateFlag.didReceiveResponse = [delegate respondsToSelector:@selector(shoppingCartFormatDidReceiveResponse:)];
+    _delegateFlag.didFailWithError = [delegate respondsToSelector:@selector(shoppingCartFormatDidFailWithError:)];
 }
 
 #pragma mark - Public
@@ -42,7 +42,7 @@ typedef struct {
     
     // 请求数据成功之后的回调
     if (_delegateFlag.didReceiveResponse) {
-        [self.delegate ShoppingCartFormatDidReceiveResponse:[HQLShoppingCartManager sharedManager].stores];
+        [self.delegate shoppingCartFormatDidReceiveResponse:[HQLShoppingCartManager sharedManager].stores];
     }
 }
 

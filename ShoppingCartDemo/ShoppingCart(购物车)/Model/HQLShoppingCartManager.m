@@ -102,7 +102,7 @@ static HQLShoppingCartManager *_sharedManager = nil;
     [self updateGoodsSettleData];
 }
 
-- (void)goodsQuantityChanged:(NSInteger)quantity atIndexPath:(NSIndexPath *)indexPath {
+- (void)updateGoodsQuantity:(NSInteger)quantity atIndexPath:(NSIndexPath *)indexPath {
     // 找到当前店铺和商品
     HQLStore *currentStore = [_mutableStores jk_objectWithIndex:indexPath.section];
     HQLGoods *currentGoods = [currentStore.goods jk_objectWithIndex:indexPath.row];
@@ -113,6 +113,17 @@ static HQLShoppingCartManager *_sharedManager = nil;
     }
     
     [self updateGoodsSettleData];
+}
+
+- (HQLStore *)storeInSection:(NSInteger)section {
+    HQLStore *currentStore = [_mutableStores jk_objectWithIndex:section];
+    return currentStore;
+}
+
+- (HQLGoods *)goodsAtIndexPath:(NSIndexPath *)indexPath {
+    HQLStore *currentStore = [_mutableStores jk_objectWithIndex:indexPath.section];
+    HQLGoods *currentGoods = [currentStore.goods jk_objectWithIndex:indexPath.row];
+    return currentGoods;
 }
 
 #pragma mark - Private

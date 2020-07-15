@@ -146,13 +146,6 @@
     return _shoppingCartSettleView;
 }
 
-- (void)updateShoppingCartSettleView {
-    [self.shoppingCartSettleView updateWithTotalPrice:_manager.settleTotalPrice
-                                               amount:_manager.settleGoodsAmount
-                               allSelectedButtonState:_manager.isAllSelected
-                                  settleButtonEnabled:_manager.isSettleButtonEnabled];
-}
-
 - (HQLShoppingCartProxy *)shoppingCartProxy {
     if (!_shoppingCartProxy) {
         _shoppingCartProxy = [[HQLShoppingCartProxy alloc] init];
@@ -184,14 +177,24 @@
         
         // MARK: 点击当前店铺名称，跳转到店铺主页
         _shoppingCartProxy.showStoreBlock = ^(NSInteger section) {
+            __strong __typeof(weakSelf)strongSelf = weakSelf;
+            
+            HQLStore *currentStore = [strongSelf.manager storeInSection:section];
+            NSLog(@"%d",currentStore.storeId.intValue);
+            
             UIViewController *viewController = [[UIViewController alloc] init];
             viewController.view.backgroundColor = rgb(230, 230, 255);
             viewController.title = @"店铺";
-            [weakSelf.navigationController pushViewController:viewController animated:YES];
+            [strongSelf.navigationController pushViewController:viewController animated:YES];
         };
         
         // MARK: 点击当前商品，跳转到商品详情页
         _shoppingCartProxy.showGoodsBlock = ^(NSIndexPath * _Nonnull indexPath) {
+            __strong __typeof(weakSelf)strongSelf = weakSelf;
+            
+            HQLGoods *currentGoods = [strongSelf.manager goodsAtIndexPath:indexPath];
+            NSLog(@"%d",currentGoods.goodsId.intValue);
+            
             UIViewController *viewController = [[UIViewController alloc] init];
             viewController.view.backgroundColor = rgb(255, 230, 230);
             viewController.title = @"商品详情";
@@ -203,7 +206,7 @@
             __strong __typeof(weakSelf)strongSelf = weakSelf;
             
             // 更新数据模型
-            [strongSelf.manager goodsQuantityChanged:quantity atIndexPath:indexPath];
+            [strongSelf.manager updateGoodsQuantity:quantity atIndexPath:indexPath];
             
             // 更新 UI
             [strongSelf updateShoppingCartSettleView];
@@ -213,11 +216,7 @@
         _shoppingCartProxy.deleteGoodsBlock = ^(MGSwipeTableCell * _Nonnull cell) {
             __strong __typeof(weakSelf)strongSelf = weakSelf;
             NSIndexPath *indexPath = [strongSelf.tableView indexPathForCell:cell];
-            
-            NSLog(@"indexPath = %@",indexPath);
-            NSLog(@"indexPath.section = %ld",indexPath.section);
-            NSLog(@"indexPath.row = %ld",indexPath.row);
-            
+                        
             // 更新数据模型
             [strongSelf.manager deleteGoodsAtIndexPath:indexPath];
             
@@ -259,10 +258,17 @@
     [self.shoppingCartFormat requestShoppingCartData];
 }
 
+- (void)updateShoppingCartSettleView {
+    [self.shoppingCartSettleView updateWithTotalPrice:_manager.settleTotalPrice
+                                               amount:_manager.settleGoodsAmount
+                               allSelectedButtonState:_manager.isAllSelected
+                                  settleButtonEnabled:_manager.isSettleButtonEnabled];
+}
+
 #pragma mark - <HQLShoppingCartFormatDelegate>
 
 // 获取购物车数据成功回调
-- (void)ShoppingCartFormatDidReceiveResponse:(NSArray *)dataSourceArray {
+- (void)shoppingCartFormatDidReceiveResponse:(NSArray *)dataSourceArray {
     // 通过网络请求数据时，处理成功的回调数据...
     
     [self.tableView.mj_header endRefreshing];
@@ -271,7 +277,7 @@
 }
 
 // 获取购物车数据失败回调
-- (void)ShoppingCartFormatDidFailWithError:(NSError *)error {
+- (void)shoppingCartFormatDidFailWithError:(NSError *)error {
     // 通过网络请求数据时，处理失败的回调数据...
     
     [self.tableView.mj_header endRefreshing];
