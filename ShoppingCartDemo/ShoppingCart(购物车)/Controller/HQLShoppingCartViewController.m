@@ -159,7 +159,7 @@
         
         __weak __typeof(self)weakSelf = self;
         // MARK: 选中/取消选中当前店铺
-        _shoppingCartProxy.selectStoreBlock = ^(BOOL isSelected, NSInteger section) {
+        _shoppingCartProxy.selectStoreBlock = ^(NSInteger section, BOOL isSelected) {
             __strong __typeof(weakSelf)strongSelf = weakSelf;
             
             // 更新数据模型
@@ -171,7 +171,7 @@
         };
         
         // MARK: 选中/取消选中当前商品
-        _shoppingCartProxy.selectGoodsBlock = ^(BOOL isSelected, NSIndexPath * _Nonnull indexPath) {
+        _shoppingCartProxy.selectGoodsBlock = ^(NSIndexPath * _Nonnull indexPath, BOOL isSelected) {
             __strong __typeof(weakSelf)strongSelf = weakSelf;
             
             // 更新数据模型
@@ -262,7 +262,7 @@
 #pragma mark - <HQLShoppingCartFormatDelegate>
 
 // 获取购物车数据成功回调
-- (void)ShoppingCartFormat:(HQLShoppingCartFormat *)format didReceiveResponse:(NSArray *)dataSourceArray {
+- (void)ShoppingCartFormatDidReceiveResponse:(NSArray *)dataSourceArray {
     // 通过网络请求数据时，处理成功的回调数据...
     
     [self.tableView.mj_header endRefreshing];
@@ -271,7 +271,7 @@
 }
 
 // 获取购物车数据失败回调
-- (void)ShoppingCartFormat:(HQLShoppingCartFormat *)format didFailWithError:(NSError *)error {
+- (void)ShoppingCartFormatDidFailWithError:(NSError *)error {
     // 通过网络请求数据时，处理失败的回调数据...
     
     [self.tableView.mj_header endRefreshing];
