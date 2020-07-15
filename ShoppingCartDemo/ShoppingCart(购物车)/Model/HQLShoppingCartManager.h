@@ -48,6 +48,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 根据 indexPath 返回 Goods
 - (HQLGoods *)goodsAtIndexPath:(NSIndexPath *)indexPath;
 
+// 结算商品时，通过该方法返回选中商品
+- (NSArray *)settleSelectedStores;
+
 @end
 
 NS_ASSUME_NONNULL_END

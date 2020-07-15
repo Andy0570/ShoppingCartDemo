@@ -126,6 +126,22 @@ static HQLShoppingCartManager *_sharedManager = nil;
     return currentGoods;
 }
 
+- (NSArray *)settleSelectedStores {
+    [_mutableStores enumerateObjectsUsingBlock:^(HQLStore *currentStore, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (!currentStore.selectedState.boolValue) {
+            [_mutableStores removeObject:currentStore];
+        } else {
+            [currentStore.goods enumerateObjectsUsingBlock:^(HQLGoods *currentGoods, NSUInteger idx, BOOL * _Nonnull stop) {
+                if (!currentGoods.selectedState.boolValue) {
+                    [currentStore.goods removeObject:currentGoods];
+                }
+            }];
+        }
+    }];
+    
+    return [_mutableStores mutableCopy];
+}
+
 #pragma mark - Private
 
 // !!!: 出于演示目的，此处从 plist 文件中加载商品数据，正式环境下需要从网络获取
