@@ -13,10 +13,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 // 选中/取消选中当前店铺
-typedef void(^ShoppingCartProxySelectStoreHandler)(BOOL isSelected, NSInteger section);
+typedef void(^ShoppingCartProxySelectStoreHandler)(NSInteger section, BOOL isSelected);
 
 // 选中/取消选中当前商品
-typedef void(^ShoppingCartProxySelectGoodsHandler)(BOOL isSelected, NSIndexPath *indexPath);
+typedef void(^ShoppingCartProxySelectGoodsHandler)(NSIndexPath *indexPath, BOOL isSelected);
 
 // 点击当前店铺名称，跳转到店铺主页
 typedef void(^ShoppingCartProxyShowStoreHandler)(NSInteger section);

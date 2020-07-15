@@ -62,7 +62,7 @@
 
         // 向外传递消息，刷新 UI
         if (strongSelf.selectGoodsBlock) {
-            strongSelf.selectGoodsBlock(isSelected, indexPath);
+            strongSelf.selectGoodsBlock(indexPath, isSelected);
         }
     };
     
@@ -108,7 +108,7 @@
 
         // 向外传递消息，刷新 UI
         if (strongSelf.selectStoreBlock) {
-            strongSelf.selectStoreBlock(isSelected, section);
+            strongSelf.selectStoreBlock(section, isSelected);
         }
     };
     

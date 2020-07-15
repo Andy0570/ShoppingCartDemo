@@ -16,10 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 @optional
 
 // 获取购物车数据成功回调
-- (void)ShoppingCartFormat:(HQLShoppingCartFormat *)format didReceiveResponse:(NSArray *)dataSourceArray;
+- (void)ShoppingCartFormatDidReceiveResponse:(NSArray *)dataSourceArray;
 
 // 获取购物车数据失败回调
-- (void)ShoppingCartFormat:(HQLShoppingCartFormat *)format didFailWithError:(NSError *)error;
+- (void)ShoppingCartFormatDidFailWithError:(NSError *)error;
 
 @end
 
