@@ -132,13 +132,13 @@
         _shoppingCartSettleView.allSelectedBlock = ^(BOOL isAllSelected) {
             __strong __typeof(weakSelf)strongSelf = weakSelf;
             
-            [strongSelf.manager setAllGoodsSelect:isAllSelected];
+            [strongSelf.manager selectAllGoods:isAllSelected];
             [strongSelf.tableView reloadData];
             [strongSelf updateShoppingCartSettleView];
         };
         
         // MARK: 结算按钮
-        _shoppingCartSettleView.settleButtonActionBlock = ^{
+        _shoppingCartSettleView.settleGoodsBlock = ^{
             // TODO: 获取选中商品，发起商品结算...
             
         };
@@ -199,7 +199,7 @@
         };
         
         // MARK: 修改购买商品数量
-        _shoppingCartProxy.goodsQuantityChangedBlock = ^(NSIndexPath * _Nonnull indexPath, NSInteger quantity) {
+        _shoppingCartProxy.updateGoodsQuantityBlock = ^(NSIndexPath * _Nonnull indexPath, NSInteger quantity) {
             __strong __typeof(weakSelf)strongSelf = weakSelf;
             
             // 更新数据模型

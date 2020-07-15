@@ -76,14 +76,14 @@ static HQLShoppingCartManager *_sharedManager = nil;
     [self updateGoodsSettleData];
 }
 
-- (void)setAllGoodsSelect:(BOOL)state {
-    NSNumber *selectState = [NSNumber numberWithBool:state];
+- (void)selectAllGoods:(BOOL)selectedState {
+    NSNumber *state = [NSNumber numberWithBool:selectedState];
     
     [_mutableStores enumerateObjectsUsingBlock:^(HQLStore *store, NSUInteger idx, BOOL * _Nonnull stop) {
-        store.selectedState = selectState;
+        store.selectedState = state;
         
         [store.goods enumerateObjectsUsingBlock:^(HQLGoods *goods, NSUInteger idx, BOOL * _Nonnull stop) {
-            goods.selectedState = selectState;
+            goods.selectedState = state;
         }];
     }];
     

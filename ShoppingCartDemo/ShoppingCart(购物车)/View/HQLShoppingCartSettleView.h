@@ -11,14 +11,14 @@
 NS_ASSUME_NONNULL_BEGIN
 
 // 购物车底部，全选按钮点击 Block
-typedef void(^ShoppingCartSettleViewAllSelectedBlock)(BOOL isAllSelected);
+typedef void(^ShoppingCartSelectAllGoodsBlock)(BOOL isAllSelected);
 
 /// 购物车底部结算视图
 @interface HQLShoppingCartSettleView : UIView
 
 // 全选按钮点击事件
-@property (nonatomic, copy) ShoppingCartSettleViewAllSelectedBlock allSelectedBlock;
-@property (nonatomic, copy) dispatch_block_t settleButtonActionBlock;
+@property (nonatomic, copy) ShoppingCartSelectAllGoodsBlock allSelectedBlock;
+@property (nonatomic, copy) dispatch_block_t settleGoodsBlock;
 
 /// 更新购物车底部按钮视图 UI
 /// @param totalPrice 商品合计金额

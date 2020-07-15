@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)selectGoodsAtIndexPath:(NSIndexPath *)indexPath selectedState:(BOOL)selectedState;
 
 // 全选/取消全选
-- (void)setAllGoodsSelect:(BOOL)state;
+- (void)selectAllGoods:(BOOL)selectedState;
 
 // 移除某个 row 中的商品
 - (void)deleteGoodsAtIndexPath:(NSIndexPath *)indexPath;

@@ -57,7 +57,7 @@
     
     // MARK: 选中/取消选中当前商品
     __weak __typeof(self)weakSelf = self;
-    cell.selectButtonActionBlock = ^(BOOL isSelected) {
+    cell.selectGoodsBlock = ^(BOOL isSelected) {
         __strong __typeof(weakSelf)strongSelf = weakSelf;
 
         // 向外传递消息，刷新 UI
@@ -67,12 +67,12 @@
     };
     
     // MARK: 修改商品数量
-    cell.goodsQuantityChangedBlock = ^(NSInteger quantity) {
+    cell.updateGoodsQuantityBlock = ^(NSInteger quantity) {
         __strong __typeof(weakSelf)strongSelf = weakSelf;
         
         // 向外传递消息，刷新 UI
-        if (strongSelf.goodsQuantityChangedBlock) {
-            strongSelf.goodsQuantityChangedBlock(indexPath, quantity);
+        if (strongSelf.updateGoodsQuantityBlock) {
+            strongSelf.updateGoodsQuantityBlock(indexPath, quantity);
         }
     };
     
@@ -99,11 +99,11 @@
     // 1.从数据源中找到当前购物车店铺模型
     HQLStore *currentStore = self.manager.stores[section];
     // 2. 配置 header view 数据模型
-    [headerView updateWithStoreName:currentStore.storeName selectedState:currentStore.selectedState.boolValue];
+    [headerView updateStoreName:currentStore.storeName selectedState:currentStore.selectedState.boolValue];
     
     // MARK: 选中/取消选中当前店铺
     __weak __typeof(self)weakSelf = self;
-    headerView.selectButtonActionBlock = ^(BOOL isSelected) {
+    headerView.selectStoreBlock = ^(BOOL isSelected) {
         __strong __typeof(weakSelf)strongSelf = weakSelf;
 
         // 向外传递消息，刷新 UI
@@ -113,7 +113,7 @@
     };
     
     // MARK: 点击店铺标题，跳转到店铺主页
-    headerView.titleButtonActionBlock = ^{
+    headerView.showStoreBlock = ^{
         __strong __typeof(weakSelf)strongSelf = weakSelf;
 
         // 通过 Block 向外传递事件
@@ -143,14 +143,9 @@
  以上在 MGSwipeTableCell 框架的 README 文档中有提及。
  */
 - (BOOL)swipeTableCell:(MGSwipeTableCell *)cell tappedButtonAtIndex:(NSInteger)index direction:(MGSwipeDirection)direction fromExpansion:(BOOL)fromExpansion {
-    
-    NSLog(@"cell = %@",cell);
-    NSLog(@"index = %ld",index);
-    
-    
+
     // MARK: 删除按钮点击处理事件
     if (direction == MGSwipeDirectionRightToLeft && index == 0) {
-        
         if (self.deleteGoodsBlock) {
             self.deleteGoodsBlock(cell);
             return NO;
@@ -159,7 +154,6 @@
     
     // MARK: 收藏按钮点击处理事件
     if (direction == MGSwipeDirectionRightToLeft && index == 1) {
-        
         if (self.collectGoodsBlock) {
             self.collectGoodsBlock(cell);
             return NO;

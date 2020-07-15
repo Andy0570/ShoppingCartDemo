@@ -25,7 +25,7 @@ typedef void(^ShoppingCartProxyShowStoreHandler)(NSInteger section);
 typedef void(^ShoppingCartProxyShowGoodsHandler)(NSIndexPath *indexPath);
 
 // 修改购买商品数量
-typedef void(^ShoppingCartProxyGoodsQuantityChangedHandler)(NSIndexPath *indexPath, NSInteger quantity);
+typedef void(^ShoppingCartProxyUpdateGoodsQuantityHandler)(NSIndexPath *indexPath, NSInteger quantity);
 
 // 删除商品
 typedef void(^ShoppingCartProxyDeleteGoodsHandler)(MGSwipeTableCell *cell);
@@ -43,7 +43,7 @@ typedef void(^ShoppingCartProxyCollectGoodsHandler)(MGSwipeTableCell *cell);
 @property (nonatomic, copy) ShoppingCartProxySelectGoodsHandler selectGoodsBlock;
 @property (nonatomic, copy) ShoppingCartProxyShowStoreHandler showStoreBlock;
 @property (nonatomic, copy) ShoppingCartProxyShowGoodsHandler showGoodsBlock;
-@property (nonatomic, copy) ShoppingCartProxyGoodsQuantityChangedHandler goodsQuantityChangedBlock;
+@property (nonatomic, copy) ShoppingCartProxyUpdateGoodsQuantityHandler updateGoodsQuantityBlock;
 @property (nonatomic, copy) ShoppingCartProxyDeleteGoodsHandler deleteGoodsBlock;
 @property (nonatomic, copy) ShoppingCartProxyCollectGoodsHandler collectGoodsBlock;
 

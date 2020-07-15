@@ -6,7 +6,6 @@
 //  Copyright © 2020 Shanghai Haidian Information Technology Co.Ltd. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import <MGSwipeTableCell.h>
 @class HQLGoods;
 
@@ -16,17 +15,17 @@ UIKIT_EXTERN const CGFloat HQLShoppingCartCellHeight;
 UIKIT_EXTERN NSString *const HQLShoppingCartCellReuserIdentifier;
 
 // 购物袋商品 cell 单选按钮点击 Block
-typedef void(^ShoppingCartCellSelectButtonActionBlock)(BOOL isSelected);
+typedef void(^ShoppingCartSelectGoodsBlock)(BOOL isSelected);
 
 // 修改商品数量
-typedef void(^ShoppingCartGoodsQuantityChangedBlock)(NSInteger quantity);
+typedef void(^ShoppingCartUpdateGoodsQuantityBlock)(NSInteger quantity);
 
 /// 购物袋商品 cell
 @interface HQLShoppingCartCell : MGSwipeTableCell
 
 @property (nonatomic, strong) HQLGoods *goods;
-@property (nonatomic, copy) ShoppingCartCellSelectButtonActionBlock selectButtonActionBlock;
-@property (nonatomic, copy) ShoppingCartGoodsQuantityChangedBlock goodsQuantityChangedBlock;
+@property (nonatomic, copy) ShoppingCartSelectGoodsBlock selectGoodsBlock;
+@property (nonatomic, copy) ShoppingCartUpdateGoodsQuantityBlock updateGoodsQuantityBlock;
 
 @end
 

@@ -55,6 +55,7 @@ NSString *const HQLShoppingCartHeaderViewReuserIdentifier = @"HQLShoppingCartHea
         make.bottom.mas_equalTo(self.contentView).with.offset(-padding);
     }];
     
+    // 店铺 ICON 图片
     [self.shopImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.checkBox.mas_right).with.offset(padding);
         make.centerY.mas_equalTo(self.checkBox);
@@ -127,14 +128,14 @@ NSString *const HQLShoppingCartHeaderViewReuserIdentifier = @"HQLShoppingCartHea
 
 // 点击店铺标题，跳转到店铺主页
 - (void)titleButtionAction:(id)sender {
-    if (self.titleButtonActionBlock) {
-        self.titleButtonActionBlock();
+    if (self.showStoreBlock) {
+        self.showStoreBlock();
     }
 }
 
 #pragma mark - Public
 
-- (void)updateWithStoreName:(NSString *)storeName selectedState:(BOOL)isSelected {
+- (void)updateStoreName:(NSString *)storeName selectedState:(BOOL)state {
     // 设置按钮标题、颜色、字体
     NSDictionary *attributes = @{
         NSFontAttributeName:[UIFont boldSystemFontOfSize:15.0f]
@@ -143,15 +144,15 @@ NSString *const HQLShoppingCartHeaderViewReuserIdentifier = @"HQLShoppingCartHea
     [self.titleButton setAttributedTitle:title forState:UIControlStateNormal];
     
     // 店铺选中状态
-    [self.checkBox setOn:isSelected];
+    [self.checkBox setOn:state];
 }
 
 #pragma mark - <BEMCheckBoxDelegate>
 
 // 选中店铺下所有商品
 - (void)didTapCheckBox:(BEMCheckBox*)checkBox {
-    if (self.selectButtonActionBlock) {
-        self.selectButtonActionBlock(checkBox.on);
+    if (self.selectStoreBlock) {
+        self.selectStoreBlock(checkBox.on);
     }
 }
 

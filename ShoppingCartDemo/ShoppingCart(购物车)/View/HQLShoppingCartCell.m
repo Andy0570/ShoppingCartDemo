@@ -30,7 +30,6 @@ NSString *const HQLShoppingCartCellReuserIdentifier = @"HQLShoppingCartCell";
 @property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UILabel *specificationLabel;
 @property (nonatomic, strong) UILabel *priceLabel;
-@property (nonatomic, strong) UILabel *quantityLabel;
 @property (nonatomic, strong) PPNumberButton *numberButton;
 
 @end
@@ -214,7 +213,7 @@ NSString *const HQLShoppingCartCellReuserIdentifier = @"HQLShoppingCartCell";
     // 商品数量
     self.numberButton.currentNumber = goods.quantity.intValue;
     self.numberButton.minValue = 1;
-    self.numberButton.maxValue = goods.stock.intValue;
+    self.numberButton.maxValue = goods.stock.intValue ? : 1;
 }
 
 #pragma mark - Override
@@ -228,16 +227,16 @@ NSString *const HQLShoppingCartCellReuserIdentifier = @"HQLShoppingCartCell";
 #pragma mark - <BEMCheckBoxDelegate>
 
 - (void)didTapCheckBox:(BEMCheckBox *)checkBox {
-    if (self.selectButtonActionBlock) {
-        self.selectButtonActionBlock(checkBox.on);
+    if (self.selectGoodsBlock) {
+        self.selectGoodsBlock(checkBox.on);
     }
 }
 
 #pragma mark - <PPNumberButtonDelegate>
 
 - (void)pp_numberButton:(PPNumberButton *)numberButton number:(NSInteger)number increaseStatus:(BOOL)increaseStatus {
-    if (self.goodsQuantityChangedBlock) {
-        self.goodsQuantityChangedBlock(number);
+    if (self.updateGoodsQuantityBlock) {
+        self.updateGoodsQuantityBlock(number);
     }
 }
 

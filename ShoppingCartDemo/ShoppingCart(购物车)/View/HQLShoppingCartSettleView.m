@@ -194,8 +194,8 @@
 #pragma mark - Actions
 
 - (void)settleButtonAction:(id)sender {
-    if (self.settleButtonActionBlock) {
-        self.settleButtonActionBlock();
+    if (self.settleGoodsBlock) {
+        self.settleGoodsBlock();
     }
 }
 
