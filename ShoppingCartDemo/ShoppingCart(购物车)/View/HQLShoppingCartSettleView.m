@@ -201,6 +201,8 @@
     self.totalPriceLabel.attributedText = [self attributedStringOfTotalPrice:totalPrice];
 }
 
+#pragma mark - Private
+
 // 渲染商品数量
 - (NSAttributedString *)attributedStringOfGoodsAmount:(NSInteger)amount {
     NSString *amountString = [NSString stringWithFormat:@"%ld", (long)amount];

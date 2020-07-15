@@ -154,8 +154,6 @@ NSString *const HQLShoppingCartCellReuserIdentifier = @"HQLShoppingCartCell";
 - (UILabel *)priceLabel {
     if (!_priceLabel) {
         _priceLabel = [[UILabel alloc] init];
-        _priceLabel.font = [UIFont boldSystemFontOfSize:20.0f];
-        _priceLabel.textColor = [UIColor redColor];
     }
     return _priceLabel;
 }
@@ -195,25 +193,33 @@ NSString *const HQLShoppingCartCellReuserIdentifier = @"HQLShoppingCartCell";
     self.specificationLabel.text = goods.specification;
     
     // 商品价格
-    NSString *price = [NSString stringWithFormat:@"¥ %.2f", goods.price.floatValue];
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:price];
-    NSDictionary *attributes1 = @{
-        NSForegroundColorAttributeName:[UIColor redColor],
-        NSFontAttributeName:[UIFont systemFontOfSize:14 weight:UIFontWeightMedium]
-    };
-    [attributedString setAttributes:attributes1 range:NSMakeRange(0, 1)];
-    
-    NSDictionary *attributes2 = @{
-        NSForegroundColorAttributeName:[UIColor redColor],
-        NSFontAttributeName:[UIFont systemFontOfSize:20 weight:UIFontWeightMedium]
-    };
-    [attributedString setAttributes:attributes2 range:NSMakeRange(2, price.length-2)];
-    self.priceLabel.attributedText = attributedString;
+    self.priceLabel.attributedText = [self attributedStringOfGoodsPrice:goods.price.floatValue];
     
     // 商品数量
     self.numberButton.currentNumber = goods.quantity.intValue;
     self.numberButton.minValue = 1;
     self.numberButton.maxValue = goods.stock.intValue ? : 1;
+}
+
+#pragma mark - Private
+
+- (NSAttributedString *)attributedStringOfGoodsPrice:(float)price {
+    NSString *string = [NSString stringWithFormat:@"¥ %.2f",price];
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string];
+    
+    NSDictionary *attributes1 = @{
+        NSForegroundColorAttributeName:[UIColor redColor],
+        NSFontAttributeName:[UIFont systemFontOfSize:14 weight:UIFontWeightMedium]
+    };
+    [attributedString addAttributes:attributes1 range:NSMakeRange(0, 1)];
+    
+    NSDictionary *attributes2 = @{
+        NSForegroundColorAttributeName:[UIColor redColor],
+        NSFontAttributeName:[UIFont systemFontOfSize:20 weight:UIFontWeightMedium]
+    };
+    [attributedString addAttributes:attributes2 range:NSMakeRange(2, string.length - 2)];
+    
+    return attributedString;
 }
 
 #pragma mark - Override
