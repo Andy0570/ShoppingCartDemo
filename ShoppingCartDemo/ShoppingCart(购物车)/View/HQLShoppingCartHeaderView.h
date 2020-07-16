@@ -1,9 +1,9 @@
 //
 //  HQLShoppingCartHeaderView.h
-//  ShoppingCartDemo
+//  ProjectName
 //
-//  Created by Qilin Hu on 2020/7/13.
-//  Copyright © 2020 Shanghai Haidian Information Technology Co.Ltd. All rights reserved.
+//  Created by Qilin Hu on 2020/4/30.
+//  Copyright © 2020 Qilin Hu. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

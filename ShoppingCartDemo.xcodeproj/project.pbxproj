@@ -35,6 +35,7 @@
 		22AA78F724AB962D0093C2EF /* HQLMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AA78F624AB962D0093C2EF /* HQLMessageViewController.m */; };
 		22AA78FA24AB963B0093C2EF /* HQLMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AA78F924AB963B0093C2EF /* HQLMineViewController.m */; };
 		22AA790024ABA8080093C2EF /* AppDelegate+CYLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AA78FF24ABA8080093C2EF /* AppDelegate+CYLTabBar.m */; };
+		22C79F4224C04890001FB16E /* UILabel+HQLAttributedText.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C79F4124C04890001FB16E /* UILabel+HQLAttributedText.m */; };
 		74AC0E5959196440568CFFC8 /* libPods-ShoppingCartDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5B78E3CCE6B298FC1C21AB /* libPods-ShoppingCartDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,8 @@
 		22AA78F924AB963B0093C2EF /* HQLMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HQLMineViewController.m; sourceTree = "<group>"; };
 		22AA78FE24ABA8080093C2EF /* AppDelegate+CYLTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+CYLTabBar.h"; sourceTree = "<group>"; };
 		22AA78FF24ABA8080093C2EF /* AppDelegate+CYLTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+CYLTabBar.m"; sourceTree = "<group>"; };
+		22C79F4024C04890001FB16E /* UILabel+HQLAttributedText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+HQLAttributedText.h"; sourceTree = "<group>"; };
+		22C79F4124C04890001FB16E /* UILabel+HQLAttributedText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+HQLAttributedText.m"; sourceTree = "<group>"; };
 		300948BA570DDA5D679D6269 /* Pods-ShoppingCartDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCartDemo.release.xcconfig"; path = "Target Support Files/Pods-ShoppingCartDemo/Pods-ShoppingCartDemo.release.xcconfig"; sourceTree = "<group>"; };
 		7E5B78E3CCE6B298FC1C21AB /* libPods-ShoppingCartDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShoppingCartDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F410CA26FC2A4B11077CE158 /* Pods-ShoppingCartDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCartDemo.debug.xcconfig"; path = "Target Support Files/Pods-ShoppingCartDemo/Pods-ShoppingCartDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -206,6 +209,7 @@
 				22092A9624BC4B6600A1C018 /* View */,
 				22092A9524BC4B6000A1C018 /* Model */,
 				22092A9424BC4B4F00A1C018 /* Proxy */,
+				22C79F3F24C04876001FB16E /* Category */,
 			);
 			path = "ShoppingCart(购物车)";
 			sourceTree = "<group>";
@@ -320,6 +324,15 @@
 				2251096224AB4BA400057BBC /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22C79F3F24C04876001FB16E /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				22C79F4024C04890001FB16E /* UILabel+HQLAttributedText.h */,
+				22C79F4124C04890001FB16E /* UILabel+HQLAttributedText.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		44B6FD518860EAF0A9FA67F5 /* Frameworks */ = {
@@ -458,6 +471,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22C79F4224C04890001FB16E /* UILabel+HQLAttributedText.m in Sources */,
 				22092A9A24BC4B8C00A1C018 /* HQLShoppingCartViewController.m in Sources */,
 				22092A7224BC38AF00A1C018 /* UITableViewCell+ConfigureModel.m in Sources */,
 				22092AB424BC7F7B00A1C018 /* HQLShoppingCartFormat.m in Sources */,

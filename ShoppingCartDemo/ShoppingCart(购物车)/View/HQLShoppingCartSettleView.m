@@ -1,9 +1,9 @@
 //
 //  HQLShoppingCartSettleView.m
-//  ShoppingCartDemo
+//  ProjectName
 //
-//  Created by Qilin Hu on 2020/7/13.
-//  Copyright © 2020 Shanghai Haidian Information Technology Co.Ltd. All rights reserved.
+//  Created by Qilin Hu on 2020/4/30.
+//  Copyright © 2020 Qilin Hu. All rights reserved.
 //
 
 #import "HQLShoppingCartSettleView.h"
@@ -14,6 +14,9 @@
 #import <Masonry.h>
 #import <YYKit.h>
 #import <JKCategories.h>
+
+// Category
+#import "UILabel+HQLAttributedText.h"
 
 @interface HQLShoppingCartSettleView () <BEMCheckBoxDelegate>
 
@@ -163,7 +166,7 @@
 - (UILabel *)totalPriceLabel {
     if (!_totalPriceLabel) {
         _totalPriceLabel = [[UILabel alloc] init];
-        _totalPriceLabel.attributedText = [self attributedStringOfTotalPrice:0.0];
+        [_totalPriceLabel hql_setAttributedTextWithTotalPrice:0.0];
     }
     return _totalPriceLabel;
 }
@@ -171,7 +174,7 @@
 - (UILabel *)totalCountLabel {
     if (!_totalCountLabel) {
         _totalCountLabel = [[UILabel alloc] init];
-        _totalCountLabel.attributedText = [self attributedStringOfGoodsAmount:0];
+        [_totalCountLabel hql_setAttributedTextWithGoodsAmount:0];
     }
     return _totalCountLabel;
 }
@@ -195,61 +198,12 @@
     self.settleButton.enabled = isEnabled;
     
     // 商品数量
-    self.totalCountLabel.attributedText = [self attributedStringOfGoodsAmount:amount];
+    [self.totalCountLabel hql_setAttributedTextWithGoodsAmount:amount];
     
     // 合计金额
-    self.totalPriceLabel.attributedText = [self attributedStringOfTotalPrice:totalPrice];
+    [self.totalPriceLabel hql_setAttributedTextWithTotalPrice:totalPrice];
 }
 
-#pragma mark - Private
-
-// 渲染商品数量
-- (NSAttributedString *)attributedStringOfGoodsAmount:(NSInteger)amount {
-    NSString *amountString = [NSString stringWithFormat:@"%ld", (long)amount];
-    NSString *string = [NSString stringWithFormat:@"共 %@ 件商品", amountString];
-    UIFont *textFont = [UIFont systemFontOfSize:14];
-    UIColor *textColor = [UIColor colorWithRed:120/255.0 green:120/255.0 blue:120/255.0 alpha:1];
-    
-    NSDictionary *attributes1 = @{
-        NSForegroundColorAttributeName: textColor,
-        NSFontAttributeName: textFont
-    };
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string attributes:attributes1];
-
-    NSDictionary *attributes2 = @{
-        NSForegroundColorAttributeName: textColor,
-        NSFontAttributeName: textFont,
-        NSUnderlineStyleAttributeName: @(NSUnderlineStyleSingle),
-        NSUnderlineColorAttributeName: textColor
-    };
-    NSRange amountStringRange = NSMakeRange(2, amountString.jk_wordsCount);
-    [attributedString addAttributes:attributes2 range:amountStringRange];
-    
-    return attributedString;
-}
-
-// 渲染合计金额字符串
-- (NSAttributedString *)attributedStringOfTotalPrice:(float)totalPrice {
-    NSString *totalPriceString = [NSString stringWithFormat:@"￥%.0f", totalPrice];
-    NSString *string = [NSString stringWithFormat:@"合计：%@", totalPriceString];
-    
-    UIFont *textFont = [UIFont systemFontOfSize:14];
-    
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string];
-    NSDictionary *attributes1 = @{
-        NSForegroundColorAttributeName: [UIColor colorWithRed:120/255.0 green:120/255.0 blue:120/255.0 alpha:1],
-        NSFontAttributeName: textFont
-    };
-    [attributedString setAttributes:attributes1 range:NSMakeRange(0, 3)];
-    
-    NSDictionary *attributes2 = @{
-        NSForegroundColorAttributeName: [UIColor colorWithRed:210/255.0 green:50/255.0 blue:50/255.0 alpha:1],
-        NSFontAttributeName: textFont
-    };
-    [attributedString setAttributes:attributes2 range:[string rangeOfString:totalPriceString]];
-    
-    return attributedString;
-}
 #pragma mark - <BEMCheckBoxDelegate>
 
 - (void)didTapCheckBox:(BEMCheckBox *)checkBox {

@@ -1,9 +1,9 @@
 //
 //  HQLShoppingCartCell.m
-//  ShoppingCartDemo
+//  ProjectName
 //
-//  Created by Qilin Hu on 2020/7/13.
-//  Copyright © 2020 Shanghai Haidian Information Technology Co.Ltd. All rights reserved.
+//  Created by Qilin Hu on 2020/4/30.
+//  Copyright © 2020 Qilin Hu. All rights reserved.
 //
 
 #import "HQLShoppingCartCell.h"
@@ -18,6 +18,9 @@
 
 // Model
 #import "HQLStore.h"
+
+// Category
+#import "UILabel+HQLAttributedText.h"
 
 // 10+88+10 = 108
 const CGFloat HQLShoppingCartCellHeight = 108;
@@ -193,33 +196,12 @@ NSString *const HQLShoppingCartCellReuserIdentifier = @"HQLShoppingCartCell";
     self.specificationLabel.text = goods.specification;
     
     // 商品价格
-    self.priceLabel.attributedText = [self attributedStringOfGoodsPrice:goods.price.floatValue];
+    [self.priceLabel hql_setAttributedTextWithGoodsPrice:goods.price.floatValue];
     
     // 商品数量
     self.numberButton.currentNumber = goods.quantity.intValue;
     self.numberButton.minValue = 1;
     self.numberButton.maxValue = goods.stock.intValue ? : 1;
-}
-
-#pragma mark - Private
-
-- (NSAttributedString *)attributedStringOfGoodsPrice:(float)price {
-    NSString *string = [NSString stringWithFormat:@"¥ %.2f",price];
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string];
-    
-    NSDictionary *attributes1 = @{
-        NSForegroundColorAttributeName:[UIColor redColor],
-        NSFontAttributeName:[UIFont systemFontOfSize:14 weight:UIFontWeightMedium]
-    };
-    [attributedString addAttributes:attributes1 range:NSMakeRange(0, 1)];
-    
-    NSDictionary *attributes2 = @{
-        NSForegroundColorAttributeName:[UIColor redColor],
-        NSFontAttributeName:[UIFont systemFontOfSize:20 weight:UIFontWeightMedium]
-    };
-    [attributedString addAttributes:attributes2 range:NSMakeRange(2, string.length - 2)];
-    
-    return attributedString;
 }
 
 #pragma mark - Override
