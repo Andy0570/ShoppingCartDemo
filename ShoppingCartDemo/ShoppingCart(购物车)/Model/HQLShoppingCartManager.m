@@ -127,19 +127,22 @@ static HQLShoppingCartManager *_sharedManager = nil;
 }
 
 - (NSArray *)settleSelectedStores {
-    [_mutableStores enumerateObjectsUsingBlock:^(HQLStore *currentStore, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (!currentStore.selectedState.boolValue) {
+    [_mutableStores enumerateObjectsUsingBlock:^(HQLStore *currentStore, NSUInteger idx, BOOL * _Nonnull stop)
+    {
+        // 移除未选中的商品
+        [currentStore.goods enumerateObjectsUsingBlock:^(HQLGoods *currentGoods, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (!currentGoods.selectedState.boolValue) {
+                [currentStore.goods removeObject:currentGoods];
+            }
+        }];
+        
+        // 如果当前店铺下没有任何商品，移除该商店
+        if (currentStore.goods.count == 0) {
             [_mutableStores removeObject:currentStore];
-        } else {
-            [currentStore.goods enumerateObjectsUsingBlock:^(HQLGoods *currentGoods, NSUInteger idx, BOOL * _Nonnull stop) {
-                if (!currentGoods.selectedState.boolValue) {
-                    [currentStore.goods removeObject:currentGoods];
-                }
-            }];
         }
     }];
     
-    return [_mutableStores mutableCopy];
+    return [_mutableStores copy];
 }
 
 #pragma mark - Private
